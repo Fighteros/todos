@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.main {
+    content: "";
+    background-image: url('/grid.svg') ;
+    width: 100%;
+    height: 100%;
+}
