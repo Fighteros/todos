@@ -42,16 +42,16 @@ export default function RootLayout({
       )}
     >
     <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-      <div className="relative flex flex-col h-screen bg-[linear-gradient(45deg,#ff9a9e,#fad0c4,#fbc2eb)]">
+      <div className="relative flex flex-col h-screen">
         <div className="main">
           <Navbar />
           <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
             {children}
           </main>
         </div>
-        <footer className="w-full flex items-center justify-center py-9 bg-default-100 ">
-          <p className="text-foreground text-sm">Copyrights@2025</p>
-        </footer>
+        {/*<footer className="w-full flex items-center justify-center py-9 bg-default-100 ">*/}
+        {/*  <p className="text-foreground text-sm">Copyrights@2025</p>*/}
+        {/*</footer>*/}
 
       </div>
     </Providers>

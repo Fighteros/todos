@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 
-.main {
-    content: "";
-    background-image: url('/grid.svg') ;
-    width: 100%;
-    height: 100%;
-}
+/*.main {*/
+/*    content: "";*/
+/*    background-image: url('/grid.svg') ;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*}*/

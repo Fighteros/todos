@@ -24,5 +24,6 @@ export const siteConfig = {
     },
   ],
   links: {
-  },
+  }, turnstileSitekey: "AhmedabdElGhany"
+
 };
