@@ -2,18 +2,16 @@ import { Avatar } from "@heroui/react";
 import { Button } from "@heroui/button";
 import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
 
-export default function PersonalInformation() {
+interface PersonalInfoDetail {
+  name: string;
+  detail: string;
+}
 
-  const info = [
-    { name: "First Name", detail: "John" },
-    { name: "Last Name", detail: "Doe" },
-    { name: "Address", detail: "2972 Westheimer Rd, Santa Ana, Illionis 85486" },
-    { name: "Email Address", detail: "Example@gmail.com" },
-    { name: "Phone Number", detail: "+20100024545" },
-    { name: "Date of birth", detail: "April 08, 1995" },
-    { name: "Gender", detail: "Male" }
-  ];
+interface PersonalInformationProps {
+  info: PersonalInfoDetail[];
+}
 
+export default function PersonalInformation({ info }: PersonalInformationProps) {
 
   return (
     <div className="flex flex-col w-full py-5">
@@ -43,7 +41,7 @@ export default function PersonalInformation() {
         {/* Personal Info  */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
           {info.map((detail, index) => (
-            <div key={detail.name}>
+            <div key={index}>
               <div className="text-gray-500">{detail.name}</div>
               <div>{detail.detail}</div>
             </div>
