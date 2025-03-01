@@ -16,8 +16,8 @@ export default function SettingsPage() {
     { name: "First Name", detail: "John" },
     { name: "Last Name", detail: "Doe" },
     { name: "Address", detail: "2972 Westheimer Rd, Santa Ana, Illionis 85486" },
-    { name: "Email Address", detail: "Example@gmail.com" },
-    { name: "Phone Number", detail: "+20100024545" },
+    { name: "Email Address", detail: "Example@gmail.com" , verified: false },
+    { name: "Phone Number", detail: "+20100024545", verified: true },
     { name: "Date of birth", detail: "April 08, 1995" },
     { name: "Gender", detail: "Male" }
   ];
@@ -89,9 +89,6 @@ export default function SettingsPage() {
               ))}
             </Tabs>
           </div>
-          {/*  Verification Tabs  */}
-
-          {/* end Verification Tabs */}
 
 
         </div>
