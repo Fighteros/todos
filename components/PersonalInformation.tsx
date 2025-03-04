@@ -118,16 +118,7 @@ export default function PersonalInformation({ info }: PersonalInformationProps) 
                     onChange={(e) => handleInputChange(index, e.target.value)}
                     className="border border-gray-300 rounded-md p-1 w-full"
                   />
-                  {/* Verified Badge for Email and Phone */}
-                  {(detail.name === "Email Address" || detail.name === "Phone Number") && (
-                      <Chip
-                        className={detail.verified? "bg-green-100" : "bg-red-100"}
-                        radius="sm" color={detail.verified ? "success" : "danger"}
-                        startContent={detail.verified ? <CheckIcon fontSize="small" /> : <ClearIcon fontSize="small" />}
-                        variant="light">
-                        <p className="text-xs hidden sm:inline">{detail.verified ? "Verified" : "Not verified"}</p>
-                      </Chip>
-                    )}
+
                 </div>
               ) : (
                 <div className="flex items-center gap-2">
