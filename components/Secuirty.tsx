@@ -3,11 +3,12 @@ import Container from "@mui/material/Container";
 import { Switch } from "@heroui/switch";
 import { FormEvent, useState } from "react";
 import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
-import { Button, Form, Progress } from "@heroui/react";
+import { Button, Form, Progress, useDisclosure } from "@heroui/react";
 
 import PasswordInput from "./PasswordInput";
 
 import { SafeLockIcon } from "@/components/icons";
+import Disable2Fa from "@/components/Disable2fa";
 
 
 interface Errors {
@@ -25,6 +26,8 @@ export default function Security() {
   const [isVisible, setIsVisible] = useState(false);
   const [isNewVisible, setIsNewVisible] = useState(false);
   const [isStrong, setIsStrong] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   const [isEditing, setIsEditing] = useState(false);
 
@@ -85,6 +88,14 @@ export default function Security() {
     setErrors((prev) => ({ ...prev, repNewPassword: newErrors }));
   };
 
+  const onSwitchChange = (isSelected: boolean) => {
+    setIsSelected(isSelected);
+
+    if (!isSelected) {
+      setIsModalOpen(true);
+    }
+  };
+
   const handlePasswordChange = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // logic to handle password change!!
@@ -101,7 +112,7 @@ export default function Security() {
           color="success"
           isSelected={isSelected}
           size="md"
-          onValueChange={setIsSelected}
+          onValueChange={(isSelected) => onSwitchChange(isSelected)}
         />
       </div>
 
@@ -187,6 +198,13 @@ export default function Security() {
           </div>
         </Form>
       </div>
+
+
+      {/*  Model */}
+      <Disable2Fa
+        isOpen={isModalOpen}
+        onOpenChange={(isOpen) => setIsModalOpen(isOpen)}
+      />
     </Container>
   );
 }
